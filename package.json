@@ -1,6 +1,6 @@
 {
   "name": "gatsby-bootcamp",
-  "description": "Learning Gatsby",
+  "description": "🎉 Learning Great Gatsby",
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop -H 0.0.0.0 -o",
