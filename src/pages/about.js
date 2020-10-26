@@ -3,14 +3,14 @@ import { Link } from "gatsby"
 
 import Layout from '../components/layout'
 
-const Home = () => {
+const About = () => {
   return (
     <Layout>
-      <h1>Hello.</h1>
-      <h2>I'm Senthil, Frontend Developer from India</h2>
+      <h1>About Me</h1>
+      <p>I am currently working as full-time Frontend Developer</p>
       <p>Need a developer? <Link to="/contact">Contact me.</Link></p>
     </Layout>
   )
 }
 
-export default Home
+export default About
