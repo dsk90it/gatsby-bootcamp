@@ -1,16 +1,14 @@
 import React from "react"
 
-import '../css/defaults.scss'
+import '../styles/defaults.scss'
 
-import Header from './header'
-import Footer from './footer'
+import Header from './header/header'
 
 const Layout = (props) => {
   return (
     <>
       <Header />
       {props.children}
-      <Footer />
     </>
   )
 }
