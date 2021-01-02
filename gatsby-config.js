@@ -7,11 +7,18 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: 'Gatsby Bootcamp',
-    author: 'Senthil'
+    github: 'https://github.com/dsk90it',
+    emailId: 'dsk90it@gmail.com'
   },
 
   plugins: [
-    'gatsby-plugin-sass'
+    'gatsby-plugin-sass',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/blog/`,
+      },
+    },
   ],
 }
