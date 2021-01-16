@@ -1,6 +1,6 @@
 ---
-title: 'The Great Gatsby'
-date: '2021-01-02'
+title: "The Great Gatsby"
+date: "2021-01-02"
 ---
 
 # Welcome to the Gatsby Way of Building

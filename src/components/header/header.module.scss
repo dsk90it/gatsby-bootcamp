@@ -1,6 +1,6 @@
-@import '../../styles/abstracts/variables.scss';
+@import "../../styles/abstracts/variables.scss";
 
-.navbar{
+.navbar {
   position: fixed;
   left: 0;
   top: 0;
@@ -10,52 +10,52 @@
   background-color: $white;
   z-index: 10;
 
-  .container{
+  .container {
     display: flex;
     align-items: center;
   }
 
-  ul{
+  ul {
     display: flex;
     margin: 0;
     list-style: none;
-    padding:0;
+    padding: 0;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     line-height: 1;
 
-    li{
+    li {
       padding-left: 20px;
       max-width: 100%;
       min-width: 0;
       font-size: 1.05em;
       font-weight: $semi-bold;
 
-      &:first-child{
+      &:first-child {
         padding-left: 0;
       }
 
-      a{
+      a {
         color: $grey;
         display: block;
         padding: 20px 0;
 
-        svg{
+        svg {
           width: 20px;
           height: 20px;
           fill: $grey;
         }
 
-        &:hover{
+        &:hover {
           color: $purple;
 
-          svg{
+          svg {
             fill: $purple;
           }
         }
 
-        &.active{
+        &.active {
           color: $purple;
         }
       }
