@@ -1,0 +1,54 @@
+@import '../../styles/abstracts/variables.scss';
+
+.blogMainCard {
+  display: block;
+  width: 100%;
+  margin-bottom: 2.5em;
+
+  a {
+    display: inline-block;
+
+    h3 {
+      margin: 0 0 12px;
+      font-size: 2em;
+      font-weight: $bold;
+      color: $black;
+    }
+
+    p {
+      margin: 0;
+      color: $grey;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    .publisher {
+      font-size: 16px;
+      line-height: 21px;
+      margin-bottom: 0.5rem;
+    }
+
+    .readmore {
+      display: inline-block;
+      transition: all 0.2s;
+      color: $purple;
+      border-bottom: 1px solid;
+      margin-top: 0.75em;
+
+      svg {
+        margin-left: 0.35em;
+        vertical-align: middle;
+      }
+    }
+
+    &:hover {
+      h3 {
+        color: $purple;
+      }
+
+      .readmore {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+}

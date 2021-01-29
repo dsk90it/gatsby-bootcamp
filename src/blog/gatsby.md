@@ -1,6 +1,7 @@
 ---
-title: "The Great Gatsby"
-date: "2021-01-02"
+title: 'The Great Gatsby'
+date: 'January 02 2021'
+author: 'Emily Jackson'
 ---
 
 # Welcome to the Gatsby Way of Building

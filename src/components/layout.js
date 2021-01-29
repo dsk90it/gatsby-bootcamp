@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 
-import "../styles/defaults.scss"
+import '../styles/defaults.scss'
 
-import Header from "./header/header"
+import Header from './header/header'
 
 const Layout = props => {
   return (

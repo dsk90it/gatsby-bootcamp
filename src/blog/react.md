@@ -1,6 +1,7 @@
 ---
-title: "React"
-date: "2021-01-01"
+title: 'React'
+date: 'January 02 2021'
+author: 'John Doe'
 ---
 
 # A JavaScript library for building user interfaces

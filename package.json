@@ -1,10 +1,11 @@
 {
   "name": "gatsby-bootcamp",
   "description": "🎉 Learning Great Gatsby",
+  "license": "ISC",
   "scripts": {
     "build": "gatsby build",
     "start": "env-cmd -f .env.development gatsby develop -H 0.0.0.0 -o",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,scss}\"",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"

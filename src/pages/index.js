@@ -1,7 +1,7 @@
-import React from "react"
+import React from 'react'
 
-import Layout from "../components/layout"
-import FullScreenLayout from "../components/fullscreen_layout/fullscreen_layout"
+import Layout from '../components/layout'
+import FullScreenLayout from '../components/fullscreen_layout/fullscreen_layout'
 
 const Home = () => {
   return (
