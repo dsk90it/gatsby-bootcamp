@@ -20,10 +20,7 @@ const Blog = () => {
       }
     }
   `)
-
   const cardData = data.allMarkdownRemark.nodes
-
-  console.log(data)
 
   return (
     <Layout>
