@@ -9,18 +9,23 @@ const Blog = () => {
   const data = useStaticQuery(graphql`
     {
       allMarkdownRemark {
-        nodes {
-          excerpt(truncate: false, pruneLength: 300)
-          frontmatter {
-            title
-            date
-            author
+        edges {
+          node {
+            excerpt(truncate: false, pruneLength: 300)
+            frontmatter {
+              title
+              date
+              author
+            }
+            fields {
+              slug
+            }
           }
         }
       }
     }
   `)
-  const cardData = data.allMarkdownRemark.nodes
+  const cardData = data.allMarkdownRemark.edges
 
   return (
     <Layout>
@@ -35,11 +40,11 @@ const Blog = () => {
             return (
               <ArticleCard
                 key={index}
-                cardLink={'/'}
-                cardTitle={item.frontmatter.title}
-                author={item.frontmatter.author}
-                publishedDate={item.frontmatter.date}
-                excerpt={item.excerpt}
+                cardLink={`#`}
+                cardTitle={item.node.frontmatter.title}
+                author={item.node.frontmatter.author}
+                publishedDate={item.node.frontmatter.date}
+                excerpt={item.node.excerpt}
               />
             )
           })}
