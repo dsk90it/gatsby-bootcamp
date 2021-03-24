@@ -31,7 +31,7 @@ const Blog = () => {
     <Layout>
       <div className="container">
         <div className={BlogStyles.titleSection}>
-          <h1>Blog</h1>
+          <p className={BlogStyles.title}>Blog</p>
         </div>
 
         {cardData.map((item, index) => {

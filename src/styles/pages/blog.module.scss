@@ -1,10 +1,12 @@
 @import '../abstracts/variables.scss';
 
 .titleSection {
-  display: block;
+  display: flex;
   padding: 3rem 0;
+  justify-content: space-between;
+  align-items: center;
 
-  h1 {
+  .title {
     font-weight: $bold;
     font-size: 2.5rem;
     margin: 0;
@@ -13,19 +15,26 @@
   a {
     display: inline-flex;
     align-items: center;
-    margin-bottom: 2rem;
     text-decoration: underline;
-    color: $grey;
 
     &:hover {
       text-decoration: none;
     }
+  }
+}
 
-    svg {
-      fill: $grey;
-      display: inline-block;
-      transform: rotate(180deg);
-      margin-right: 0.26rem;
-    }
+.publisher {
+  display: block;
+  color: $grey;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: $regular;
+}
+
+.innerPageContent {
+  p {
+    font-size: 1.08em;
+    line-height: 26px;
+    color: $grey;
   }
 }

@@ -1,30 +1,42 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import BlogStyles from '../styles/pages/blog.module.scss'
 
-const BlogContent = () => {
+export const blogQuery = graphql`
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        date
+        author
+      }
+      html
+    }
+  }
+`
+
+const BlogContent = props => {
+  console.log(props)
   return (
     <Layout>
       <div className="container">
         <div className={BlogStyles.titleSection}>
-          <Link to="/blog">
-            <svg
-              stroke-width="0"
-              viewBox="0 0 24 24"
-              height="1em"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
-            </svg>
-            Back to Blog
-          </Link>
-          <h1>Blog</h1>
+          <p className={BlogStyles.title}>
+            {props.data.markdownRemark.frontmatter.title}
+            <span className={BlogStyles.publisher}>
+              By {props.data.markdownRemark.frontmatter.author} on{' '}
+              {props.data.markdownRemark.frontmatter.date}
+            </span>
+          </p>
+          <Link to="/blog">Back to Blog</Link>
         </div>
 
-        <h1>This is Blog Template</h1>
+        <div
+          className={BlogStyles.innerPageContent}
+          dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
+        ></div>
       </div>
     </Layout>
   )
