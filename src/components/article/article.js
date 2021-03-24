@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import ArticleCardStyles from './article.module.scss'
@@ -6,7 +7,7 @@ import ArticleCardStyles from './article.module.scss'
 const ArticleCard = props => {
   return (
     <article className={ArticleCardStyles.blogMainCard}>
-      <a href={props.cardLink}>
+      <Link to={props.cardLink}>
         <h3>{props.cardTitle}</h3>
         <p className={ArticleCardStyles.publisher}>
           By {props.author} on {props.publishedDate}
@@ -26,7 +27,7 @@ const ArticleCard = props => {
             <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
           </svg>
         </p>
-      </a>
+      </Link>
     </article>
   )
 }
