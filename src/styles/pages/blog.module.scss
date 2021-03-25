@@ -1,36 +1,5 @@
 @import '../abstracts/variables.scss';
 
-.titleSection {
-  display: flex;
-  padding: 3rem 0;
-  justify-content: space-between;
-  align-items: center;
-
-  .title {
-    font-weight: $bold;
-    font-size: 2.5rem;
-    margin: 0;
-  }
-
-  a {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: underline;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}
-
-.publisher {
-  display: block;
-  color: $grey;
-  font-size: 16px;
-  line-height: 21px;
-  font-weight: $regular;
-}
-
 .innerPageContent {
   p {
     font-size: 1.08em;

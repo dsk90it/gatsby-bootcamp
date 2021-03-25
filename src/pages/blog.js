@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import Layout from '../components/layout'
-import BlogStyles from '../styles/pages/blog.module.scss'
+import TitleSection from '../components/title_section/title_section'
 import ArticleCard from '../components/article/article'
 
 const Blog = () => {
@@ -30,9 +30,7 @@ const Blog = () => {
   return (
     <Layout>
       <div className="container">
-        <div className={BlogStyles.titleSection}>
-          <p className={BlogStyles.title}>Blog</p>
-        </div>
+        <TitleSection title={'Blog'} />
 
         {cardData.map((item, index) => {
           return (

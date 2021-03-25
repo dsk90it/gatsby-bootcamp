@@ -30,8 +30,8 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link activeClassName={HeaderStyles.active} to="/contact">
-              Contact
+            <Link activeClassName={HeaderStyles.active} to="/nps">
+              NPS
             </Link>
           </li>
           <li className="ml--auto">

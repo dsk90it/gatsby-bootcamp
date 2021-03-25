@@ -1,8 +1,9 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import BlogStyles from '../styles/pages/blog.module.scss'
+import TitleSection from '../components/title_section/title_section'
 
 export const blogQuery = graphql`
   query($slug: String!) {
@@ -18,20 +19,15 @@ export const blogQuery = graphql`
 `
 
 const BlogContent = props => {
-  console.log(props)
   return (
     <Layout>
       <div className="container">
-        <div className={BlogStyles.titleSection}>
-          <p className={BlogStyles.title}>
-            {props.data.markdownRemark.frontmatter.title}
-            <span className={BlogStyles.publisher}>
-              By {props.data.markdownRemark.frontmatter.author} on{' '}
-              {props.data.markdownRemark.frontmatter.date}
-            </span>
-          </p>
-          <Link to="/blog">Back to Blog</Link>
-        </div>
+        <TitleSection
+          title={props.data.markdownRemark.frontmatter.title}
+          description={`By ${props.data.markdownRemark.frontmatter.author} on ${props.data.markdownRemark.frontmatter.date}`}
+          linkText={'Back to Blog'}
+          linkUrl={'/blog'}
+        />
 
         <div
           className={BlogStyles.innerPageContent}

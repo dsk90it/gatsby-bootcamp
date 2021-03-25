@@ -1,4 +1,5 @@
 const path = require('path')
+const fs = require('fs')
 
 module.exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
@@ -14,11 +15,11 @@ module.exports.onCreateNode = ({ node, actions }) => {
   }
 }
 
-// Create blog pages dynamically
-module.exports.createPages = async ({ graphql, actions }) => {
+module.exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-  const blogPostTemplate = path.resolve(`src/templates/blog-content.js`)
-  const response = await graphql(`
+
+  // Create blog pages dynamically
+  const blog = graphql(`
     query {
       allMarkdownRemark {
         edges {
@@ -30,15 +31,45 @@ module.exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-  `)
-
-  response.data.allMarkdownRemark.edges.forEach(edge => {
-    createPage({
-      path: `blog/${edge.node.fields.slug}`,
-      component: blogPostTemplate,
-      context: {
-        slug: edge.node.fields.slug,
-      },
+  `).then(result => {
+    result.data.allMarkdownRemark.edges.forEach(edge => {
+      createPage({
+        path: `blog/${edge.node.fields.slug}`,
+        component: path.resolve(`src/templates/blog-content.js`),
+        context: {
+          slug: edge.node.fields.slug,
+        },
+      })
     })
   })
+
+  // Create NPS Pages
+  const npsBenchmarks = new Promise(resolve => {
+    const npsIndexPage = path.resolve(`src/templates/nps-index.js`)
+    const npsContentPage = path.resolve(`src/templates/nps-content.js`)
+    const allNps = JSON.parse(
+      fs.readFileSync('content/nps.json', { encoding: 'utf-8' })
+    )
+
+    createPage({
+      path: `/nps`,
+      component: npsIndexPage,
+      context: {
+        ...allNps.npsBenchmarks,
+      },
+    })
+
+    allNps.npsBenchmarks.forEach(nps => {
+      createPage({
+        path: `nps/${nps.slug}`,
+        component: npsContentPage,
+        context: {
+          ...nps,
+        },
+      })
+    })
+    resolve()
+  })
+
+  return Promise.all([blog, npsBenchmarks])
 }
