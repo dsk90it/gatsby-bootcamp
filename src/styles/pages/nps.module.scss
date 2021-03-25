@@ -1,4 +1,44 @@
 @import '../abstracts/variables.scss';
 
-.npsCard {
+.npsCardWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+
+  .npsCard {
+    padding: 1rem;
+    background-color: #fbfbfb;
+    border-radius: 8px;
+    color: $grey;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+
+    @media (min-width: 750px) {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .npsCard__left {
+      strong {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: $black;
+      }
+
+      span {
+        display: block;
+      }
+    }
+
+    .npsCard__score {
+      display: inline-flex;
+      width: 64px;
+      height: 64px;
+      background-color: gold;
+      border-radius: 100%;
+      align-items: center;
+    }
+  }
 }
