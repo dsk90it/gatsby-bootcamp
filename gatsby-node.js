@@ -55,16 +55,16 @@ module.exports.createPages = ({ graphql, actions }) => {
       path: `/nps`,
       component: npsIndexPage,
       context: {
-        ...allNps.npsBenchmarks,
+        pageData: allNps,
       },
     })
 
-    allNps.npsBenchmarks.forEach(nps => {
+    allNps.forEach(nps => {
       createPage({
         path: `nps/${nps.slug}`,
         component: npsContentPage,
         context: {
-          ...nps,
+          pageData: nps,
         },
       })
     })
