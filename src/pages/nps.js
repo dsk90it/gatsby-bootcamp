@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 
 import Layout from '../components/layout'
 import TitleSection from '../components/title_section/title_section'
@@ -19,25 +19,38 @@ const Card = props => {
   )
 }
 
-const NpsBenchmarks = props => {
-  const _data = props.pageContext.pageData
-  console.log(_data)
-
+const NpsBenchmarks = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allNpsJson {
+        edges {
+          node {
+            companyName
+            employeeSize
+            businessType
+            slug
+            npsScore
+          }
+        }
+      }
+    }
+  `)
+  const cardData = data.allNpsJson.edges
   return (
     <Layout>
       <div className="container">
         <TitleSection title="NPS Benchmarks" />
 
         <div className={NpsStyles.npsCardWrapper}>
-          {_data.map((item, index) => {
+          {cardData.map((item, index) => {
             return (
               <Card
                 key={index}
-                link={`/nps/${item.slug}`}
-                title={item.companyName}
-                type={item.companyType}
-                size={item.employeeSize}
-                score={item.npsScore}
+                link={`/nps/${item.node.slug}`}
+                title={item.node.companyName}
+                type={item.node.businessType}
+                size={item.node.employeeSize}
+                score={item.node.npsScore}
               />
             )
           })}

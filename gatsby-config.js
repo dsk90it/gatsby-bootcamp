@@ -21,5 +21,12 @@ module.exports = {
       },
     },
     'gatsby-transformer-remark',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/data`,
+      },
+    },
+    'gatsby-transformer-json',
   ],
 }

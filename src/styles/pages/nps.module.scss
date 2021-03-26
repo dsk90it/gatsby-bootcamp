@@ -4,18 +4,25 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
+  padding-bottom: 2rem;
+
+  @media (min-width: 750px) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 
   .npsCard {
-    padding: 1rem;
-    background-color: #fbfbfb;
-    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid rgba($grey, 0.2);
     color: $grey;
     text-decoration: none;
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
 
-    @media (min-width: 750px) {
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    &:hover {
+      box-shadow: 15px 15px 50px rgba($black, 0.2);
+      transform: translateY(-4px);
     }
 
     .npsCard__left {
@@ -24,21 +31,120 @@
         width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
+        white-space: nowrap;
         color: $black;
+        font-size: 22px;
+        line-height: 32px;
+        font-weight: $semi-bold;
       }
 
       span {
         display: block;
+        line-height: 28px;
       }
     }
 
     .npsCard__score {
       display: inline-flex;
-      width: 64px;
-      height: 64px;
-      background-color: gold;
+      width: 72px;
+      height: 72px;
       border-radius: 100%;
       align-items: center;
+      box-shadow: inset 0 0 0 2px rgba($grey, 0.2);
+      font-size: 32px;
+      text-align: center;
+      flex-direction: column;
+      justify-content: center;
+      font-weight: $semi-bold;
+      color: $black;
+    }
+  }
+}
+
+// NPS INNER-PAGE
+.npsDetails {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  padding: 3rem 0 2.5rem;
+
+  .breadcrumb {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    color: $grey;
+
+    a {
+      color: $grey;
+    }
+
+    span {
+      color: $purple;
+    }
+  }
+
+  .npsDetails__left {
+    h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 18px;
+      color: $grey;
+      line-height: 28px;
+    }
+  }
+
+  .npsDetails__right {
+    display: inline-flex;
+    width: 160px;
+    height: 160px;
+    border-radius: 100%;
+    align-items: center;
+    box-shadow: inset 0 0 0 8px rgba($grey, 0.2);
+    font-size: 64px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: $semi-bold;
+    color: $black;
+    margin: 0 auto 2rem;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .npsDetails__left {
+      width: 60%;
+    }
+
+    .npsDetails__right {
+      margin: 0;
+    }
+  }
+}
+
+.tableSection {
+  background-color: rgba($grey, 0.1);
+  padding: 2rem;
+  border-radius: 8px;
+  list-style: none;
+  font-size: 20px;
+  margin: 0 0 2rem;
+
+  b {
+    color: $grey;
+  }
+
+  li {
+    margin-bottom: 1rem;
+    word-break: break-all;
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }

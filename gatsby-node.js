@@ -1,5 +1,4 @@
 const path = require('path')
-const fs = require('fs')
 
 module.exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
@@ -15,11 +14,10 @@ module.exports.onCreateNode = ({ node, actions }) => {
   }
 }
 
-module.exports.createPages = ({ graphql, actions }) => {
+module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  // Create blog pages dynamically
-  const blog = graphql(`
+  const blogData = await graphql(`
     query {
       allMarkdownRemark {
         edges {
@@ -31,45 +29,41 @@ module.exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `).then(result => {
-    result.data.allMarkdownRemark.edges.forEach(edge => {
-      createPage({
-        path: `blog/${edge.node.fields.slug}`,
-        component: path.resolve(`src/templates/blog-content.js`),
-        context: {
-          slug: edge.node.fields.slug,
-        },
-      })
-    })
-  })
+  `)
 
-  // Create NPS Pages
-  const npsBenchmarks = new Promise(resolve => {
-    const npsIndexPage = path.resolve(`src/templates/nps-index.js`)
-    const npsContentPage = path.resolve(`src/templates/nps-content.js`)
-    const allNps = JSON.parse(
-      fs.readFileSync('content/nps.json', { encoding: 'utf-8' })
-    )
-
+  blogData.data.allMarkdownRemark.edges.forEach(edge => {
     createPage({
-      path: `/nps`,
-      component: npsIndexPage,
+      path: `blog/${edge.node.fields.slug}`,
+      component: path.resolve(`src/templates/blog-content.js`),
       context: {
-        pageData: allNps,
+        slug: edge.node.fields.slug,
       },
     })
-
-    allNps.forEach(nps => {
-      createPage({
-        path: `nps/${nps.slug}`,
-        component: npsContentPage,
-        context: {
-          pageData: nps,
-        },
-      })
-    })
-    resolve()
   })
 
-  return Promise.all([blog, npsBenchmarks])
+  const npsData = await graphql(`
+    query {
+      allNpsJson {
+        edges {
+          node {
+            companyName
+            employeeSize
+            businessType
+            slug
+            npsScore
+          }
+        }
+      }
+    }
+  `)
+
+  npsData.data.allNpsJson.edges.forEach(nps => {
+    createPage({
+      path: `nps/${nps.node.slug}`,
+      component: path.resolve(`src/templates/nps-content.js`),
+      context: {
+        slug: nps.node.slug,
+      },
+    })
+  })
 }
