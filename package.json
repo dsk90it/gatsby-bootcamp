@@ -1,14 +1,19 @@
 {
   "name": "gatsby-bootcamp",
   "description": "🎉 Learning Great Gatsby",
+  "author": "Senthilkumar Devaraj <dsk90it@gmail.com>",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dsk90it/gatsby-bootcamp"
+  },
+
   "scripts": {
     "build": "gatsby build",
     "start": "env-cmd -f .env.development gatsby develop -H 0.0.0.0 -o",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,scss}\"",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   },
   "dependencies": {
     "gatsby": "^2.24.79",
