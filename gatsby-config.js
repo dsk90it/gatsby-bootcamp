@@ -28,5 +28,17 @@ module.exports = {
       },
     },
     'gatsby-transformer-json',
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Gatsby Site`,
+        short_name: `Gatsby Site`,
+        start_url: `/`,
+        background_color: `#6b37bf`,
+        theme_color: `#6b37bf`,
+        display: `standalone`,
+        icon: `${__dirname}/src/images/icon.png`,
+      },
+    },
   ],
 }
