@@ -7,6 +7,8 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
+    title: 'Gatsby Bootcamp',
+    description: 'This is a Gatsby bootcamp project.',
     github: 'https://github.com/dsk90it',
     emailId: 'dsk90it@gmail.com',
   },
@@ -40,5 +42,6 @@ module.exports = {
         icon: `${__dirname}/src/images/icon.png`,
       },
     },
+    'gatsby-plugin-react-helmet',
   ],
 }

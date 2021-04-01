@@ -5,7 +5,7 @@ import FullScreenLayout from '../components/fullscreen_layout/fullscreen_layout'
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout metaTitle="Home">
       <FullScreenLayout
         largeHeading={
           'Hi <span role="img" aria-label="Hi">👋</span>. I’m Senthil.<br />Frontend Engineer.'

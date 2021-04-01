@@ -20,7 +20,7 @@ export const blogQuery = graphql`
 
 const BlogContent = props => {
   return (
-    <Layout>
+    <Layout metaTitle={props.data.markdownRemark.frontmatter.title}>
       <div className="container">
         <TitleSection
           title={props.data.markdownRemark.frontmatter.title}

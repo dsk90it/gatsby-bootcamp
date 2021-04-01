@@ -28,9 +28,9 @@ const Blog = () => {
   const cardData = data.allMarkdownRemark.edges
 
   return (
-    <Layout>
+    <Layout metaTitle="Blog">
       <div className="container">
-        <TitleSection title={'Blog'} />
+        <TitleSection title="Blog" />
 
         {cardData.map((item, index) => {
           return (

@@ -37,7 +37,7 @@ const NpsBenchmarks = () => {
   `)
   const cardData = data.allNpsJson.edges
   return (
-    <Layout>
+    <Layout metaTitle="NPS Benchmarks">
       <div className="container">
         <TitleSection title="NPS Benchmarks" />
 

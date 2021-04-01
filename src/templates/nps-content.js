@@ -27,7 +27,10 @@ export const npsQuery = graphql`
 
 const NPSContent = props => {
   return (
-    <Layout>
+    <Layout
+      metaTitle={props.data.npsJson.metaTitle}
+      metaDescription={props.data.npsJson.metaDesc}
+    >
       <div className="container">
         {/* hero-section starts */}
         <section className={NpsStyles.npsDetails}>
