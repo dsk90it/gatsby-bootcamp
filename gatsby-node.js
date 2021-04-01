@@ -59,7 +59,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
 
   npsData.data.allNpsJson.edges.forEach(nps => {
     createPage({
-      path: `nps/${nps.node.slug}`,
+      path: `nps/${nps.node.slug}.html`,
       component: path.resolve(`src/templates/nps-content.js`),
       context: {
         slug: nps.node.slug,

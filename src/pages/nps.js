@@ -46,7 +46,7 @@ const NpsBenchmarks = () => {
             return (
               <Card
                 key={index}
-                link={`/nps/${item.node.slug}`}
+                link={`/nps/${item.node.slug}.html`}
                 title={item.node.companyName}
                 type={item.node.businessType}
                 size={item.node.employeeSize}
