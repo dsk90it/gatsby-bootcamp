@@ -20,7 +20,7 @@ const SEO = props => {
   const description = props.description || defaults.description
 
   return (
-    <Helmet>
+    <Helmet htmlAttributes={{ lang: 'en' }}>
       <title>{title}</title>
       <meta name="description" content={description} />
     </Helmet>

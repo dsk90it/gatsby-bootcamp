@@ -11,8 +11,8 @@
     "build": "gatsby build",
     "start": "env-cmd -f .env.development gatsby develop -H 0.0.0.0 -o",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,scss}\"",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "serve": "gatsby build && gatsby serve"
   },
   "dependencies": {
     "gatsby": "^2.24.79",
