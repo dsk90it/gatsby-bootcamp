@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import ArticleCardStyles from './article.module.scss'
+import * as ArticleCardStyles from './article.module.scss'
 
 const ArticleCard = props => {
   return (

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import TitleStyles from './title_section.module.scss'
+import * as TitleStyles from './title_section.module.scss'
 
 const TitleSection = props => {
   const description = (

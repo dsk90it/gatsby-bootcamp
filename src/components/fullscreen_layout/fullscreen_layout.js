@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import FullScreenStyles from './fullscreen.module.scss'
+import * as FullScreenStyles from './fullscreen.module.scss'
 
 const FullScreenLayout = props => {
   return (

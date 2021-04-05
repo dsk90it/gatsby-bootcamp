@@ -2,12 +2,12 @@ import React from 'react'
 
 import '../styles/defaults.scss'
 import Header from './header/header'
-import SEO from './seo'
+import Seo from './seo'
 
 const Layout = props => {
   return (
     <>
-      <SEO title={props.metaTitle} description={props.metaDescription} />
+      <Seo title={props.metaTitle} description={props.metaDescription} />
       <Header />
       {props.children}
     </>

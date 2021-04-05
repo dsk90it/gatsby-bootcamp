@@ -3,7 +3,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 
 import Layout from '../components/layout'
 import TitleSection from '../components/title_section/title_section'
-import NpsStyles from '../styles/pages/nps.module.scss'
+import * as NpsStyles from '../styles/pages/nps.module.scss'
 
 const Card = props => {
   return (
