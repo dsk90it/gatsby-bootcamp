@@ -21,9 +21,6 @@ yarn-error.log*
 # IDE
 .vscode
 
-# DOT ENV FILES
-.env*
-
 # GATSBY FILES
 .cache/
 public
