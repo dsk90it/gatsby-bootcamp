@@ -39,14 +39,14 @@ const NpsBenchmarks = () => {
   return (
     <Layout metaTitle="NPS Benchmarks">
       <div className="container">
-        <TitleSection title="NPS Benchmarks" />
+        <TitleSection title="NPS Benchmarks" description="Data Sourced from json file" />
 
         <div className={NpsStyles.npsCardWrapper}>
           {cardData.map((item, index) => {
             return (
               <Card
                 key={index}
-                link={`/nps/${item.node.slug}.html`}
+                link={`/nps/${item.node.slug}`}
                 title={item.node.companyName}
                 type={item.node.businessType}
                 size={item.node.employeeSize}

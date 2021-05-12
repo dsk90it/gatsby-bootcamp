@@ -30,7 +30,7 @@ const Blog = () => {
   return (
     <Layout metaTitle="Blog">
       <div className="container">
-        <TitleSection title="Blog" />
+        <TitleSection title="Blog" description="A Markdown Blog" />
 
         {cardData.map((item, index) => {
           return (
