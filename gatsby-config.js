@@ -14,15 +14,7 @@ module.exports = {
   },
 
   plugins: [
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        sassOptions: {
-          includePaths: [`${__dirname}/src/styles`],
-        },
-        additionalData: `@use 'globals' as *;`, // Expose all content in globals.scss file to use site-wide
-      },
-    },
+    'gatsby-plugin-sass',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
