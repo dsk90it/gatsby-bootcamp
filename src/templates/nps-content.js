@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 
-import Layout from '../components/layout'
+import Layout from '../components/layout/layout'
 import * as NpsStyles from '../styles/pages/nps.module.scss'
 
 export const npsQuery = graphql`

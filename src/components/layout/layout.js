@@ -1,8 +1,8 @@
 import React from 'react'
 
-import '../styles/defaults.scss'
-import Header from './header/header'
-import Seo from './seo'
+import '../../styles/layout.scss'
+import Header from '../header/header'
+import Seo from '../seo/seo'
 
 const Layout = props => {
   return (
