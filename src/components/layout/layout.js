@@ -1,6 +1,5 @@
 import React from 'react'
 
-import '../../styles/layout.scss'
 import Header from '../header/header'
 import Seo from '../seo/seo'
 
