@@ -66,4 +66,33 @@ module.exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  const bookData = await graphql(`
+    query {
+      allBooksJson {
+        edges {
+          node {
+            title
+            authors
+            categories
+            publisher
+            publishedDate
+            description
+            previewLink
+            slug
+          }
+        }
+      }
+    }
+  `)
+
+  bookData.data.allBooksJson.edges.forEach(book => {
+    createPage({
+      path: `books/${book.node.slug}`,
+      component: path.resolve(`src/templates/book-content.js`),
+      context: {
+        slug: book.node.slug,
+      },
+    })
+  })
 }

@@ -1,0 +1,42 @@
+[
+  {
+    "title": "The Science Book",
+    "authors": "DK",
+    "categories": "Science",
+    "publisher": "Dorling Kindersley Ltd",
+    "publishedDate": "2015-02-02",
+    "description": "All the big ideas in science, simply explained Part of the popular Big Ideas series, The Science Book explores the history of science, how scientists have sought to explain our incredible universe and how amazing scientific discoveries have been made. Discover how Galileo worked out his scientific theories of motion and inertia, why Copernicus's ideas were contentious and what the discovery of DNA meant. All the big scientific ideas and discoveries are brought to life with quirky graphics, pithy quotes and step-by-step 'mind maps', plus every area of science is covered, including astronomy, biology, chemistry, geology, maths and physics. You'll be brought up-to-date on scientific ideas from black holes to genetic engineering with eye-catching artworks showing how the ideas of key scientists have impacted our understanding of the world. Whether you are a science student or just have an interest in scientific ideas, The Science Book is a perfect way to explore this fascinating subject.",
+    "previewLink": "http://books.google.co.in/books?id=FJKbBgAAQBAJ&printsec=frontcover&dq=science&hl=&cd=1&source=gbs_api",
+    "slug": "the-science-book"
+  },
+  {
+    "title": "Popular Science",
+    "authors": "Nancy Christie",
+    "categories": "Science",
+    "publisher": "",
+    "publishedDate": "1983-11",
+    "description": "Popular Science gives our readers the information and tools to improve their technology and their world. The core belief that Popular Science and our readers share: The future is going to be better, and science and technology are the driving forces that will help make it better.",
+    "previewLink": "http://books.google.co.in/books?id=EpSrYt9lFLMC&pg=PA89&dq=science&hl=&cd=4&source=gbs_api",
+    "slug": "popular-science"
+  },
+  {
+    "title": "U.S. History",
+    "authors": "P. Scott Corbett, Volker Janssen, John M. Lund",
+    "categories": "History",
+    "publisher": "",
+    "publishedDate": "1983-11",
+    "description": "Published by OpenStax College, U.S. History covers the breadth of the chronological history of the United States and also provides the necessary depth to ensure the course is manageable for instructors and students alike. U.S. History is designed to meet the scope and sequence requirements of most courses. The authors introduce key forces and major developments that together form the American experience, with particular attention paid to considering issues of race, class and gender. The text provides a balanced approach to U.S. history, considering the people, events and ideas that have shaped the United States from both the top down (politics, economics, diplomacy) and bottom up (eyewitness accounts, lived experience).",
+    "previewLink": "http://books.google.co.in/books?id=2py3swEACAAJ&dq=history&hl=&cd=1&source=gbs_api",
+    "slug": "us-history"
+  },
+  {
+    "title": "Madras Then Chennai Now",
+    "authors": "Nandita Krishan, Tishani Doshi",
+    "categories": "History",
+    "publisher": "Roli Books Private Limited",
+    "publishedDate": "2014-02-16",
+    "description": "Madras Then: The Story of Madras is the tale of several small villages that grew to become metropolis. In the sixteenth century, when the Dutch raised the price of pepper by 5 shillings, 24 merchants in London formed the East India Company in 1600 to cor",
+    "previewLink": "http://books.google.co.in/books?id=MXDJnAEACAAJ&dq=madras&hl=&cd=2&source=gbs_api",
+    "slug": "madras-then-chennai-now"
+  }
+]

@@ -34,6 +34,11 @@ const Header = () => {
               NPS
             </Link>
           </li>
+          <li>
+            <Link activeClassName={HeaderStyles.active} to="/books/">
+              Books
+            </Link>
+          </li>
           <li className="ml--auto">
             <a
               href={data.site.siteMetadata.github}
