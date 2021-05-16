@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/layout/layout'
-import * as BlogStyles from '../styles/pages/blog.module.scss'
-import TitleSection from '../components/title_section/title_section'
+import Layout from '../../components/layout/layout'
+import * as BlogStyles from '../../styles/pages/blog.module.scss'
+import TitleSection from '../../components/title_section/title_section'
 
 export const blogQuery = graphql`
   query($slug: String!) {

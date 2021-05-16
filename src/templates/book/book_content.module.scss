@@ -1,0 +1,57 @@
+@import '../../styles/global/variables.scss';
+
+.bookDetails {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 3rem 0 2.5rem;
+
+  .breadcrumb {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    color: $grey;
+
+    a {
+      color: $grey;
+    }
+
+    span {
+      color: $purple;
+    }
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 18px;
+    color: $grey;
+    line-height: 28px;
+    margin-top: 0;
+  }
+}
+
+.tableSection {
+  background-color: rgba($grey, 0.1);
+  padding: 2rem;
+  border-radius: 8px;
+  list-style: none;
+  font-size: 20px;
+  margin: 0 0 2rem;
+
+  b {
+    color: $grey;
+  }
+
+  li {
+    margin-bottom: 1rem;
+    word-break: break-all;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

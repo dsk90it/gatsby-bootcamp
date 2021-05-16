@@ -30,11 +30,6 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link activeClassName={HeaderStyles.active} to="/nps/">
-              NPS
-            </Link>
-          </li>
-          <li>
             <Link activeClassName={HeaderStyles.active} to="/books/">
               Books
             </Link>

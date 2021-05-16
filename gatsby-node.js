@@ -34,40 +34,14 @@ module.exports.createPages = async ({ graphql, actions }) => {
   blogData.data.allMarkdownRemark.edges.forEach(edge => {
     createPage({
       path: `blog/${edge.node.fields.slug}`,
-      component: path.resolve(`src/templates/blog-content.js`),
+      component: path.resolve(`src/templates/blog/blog_content.js`),
       context: {
         slug: edge.node.fields.slug,
       },
     })
   })
 
-  const npsData = await graphql(`
-    query {
-      allNpsJson {
-        edges {
-          node {
-            companyName
-            employeeSize
-            businessType
-            slug
-            npsScore
-          }
-        }
-      }
-    }
-  `)
-
-  npsData.data.allNpsJson.edges.forEach(nps => {
-    createPage({
-      path: `nps/${nps.node.slug}`,
-      component: path.resolve(`src/templates/nps-content.js`),
-      context: {
-        slug: nps.node.slug,
-      },
-    })
-  })
-
-  const bookData = await graphql(`
+  const booksData = await graphql(`
     query {
       allBooksJson {
         edges {
@@ -86,10 +60,10 @@ module.exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  bookData.data.allBooksJson.edges.forEach(book => {
+  booksData.data.allBooksJson.edges.forEach(book => {
     createPage({
       path: `books/${book.node.slug}`,
-      component: path.resolve(`src/templates/book-content.js`),
+      component: path.resolve(`src/templates/book/book_content.js`),
       context: {
         slug: book.node.slug,
       },

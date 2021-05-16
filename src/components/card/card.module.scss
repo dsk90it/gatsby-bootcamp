@@ -1,0 +1,44 @@
+@import '../../styles/global/variables.scss';
+
+@mixin truncate-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card {
+  padding: 1.5rem;
+  border: 1px solid rgba($grey, 0.2);
+  color: $grey;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  user-select: none;
+
+  @media (min-width: $md) {
+    &:hover {
+      box-shadow: 15px 15px 50px rgba($black, 0.2);
+      transform: translateY(-4px);
+    }
+  }
+  strong {
+    display: block;
+    width: 100%;
+    color: $black;
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: $semi-bold;
+    @include truncate-text();
+  }
+
+  span {
+    display: block;
+    line-height: 28px;
+    @include truncate-text();
+
+    b {
+      font-weight: $semi-bold;
+    }
+  }
+}

@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 
-import Layout from '../components/layout/layout'
-import * as NpsStyles from '../styles/pages/nps.module.scss'
+import Layout from '../../components/layout/layout'
+import * as BookInnerStyles from './book_content.module.scss'
 
 export const bookQuery = graphql`
   query($slug: String!) {
@@ -26,20 +26,19 @@ const BookContent = props => {
     <Layout metaTitle={book.title}>
       <div className="container">
         {/* hero-section starts */}
-        <section className={NpsStyles.npsDetails}>
-          <div className={NpsStyles.npsDetails__left}>
-            <div className={NpsStyles.breadcrumb}>
-              <Link to={'/books'}>Books</Link> &nbsp; &gt;&gt; &nbsp;
-              <span>{book.title}</span>
-            </div>
-            <h1>{book.title}</h1>
-            <p>{book.description}</p>
+        <section className={BookInnerStyles.bookDetails}>
+          <div className={BookInnerStyles.breadcrumb}>
+            <Link to={'/books'}>Books</Link> &nbsp; &gt;&gt; &nbsp;
+            <span>{book.title}</span>
           </div>
+
+          <h1>{book.title}</h1>
+          <p>{book.description}</p>
         </section>
         {/* hero-section ends */}
 
         {/* table starts */}
-        <ul className={NpsStyles.tableSection}>
+        <ul className={BookInnerStyles.tableSection}>
           <li>
             <b>Author(s): </b>
             {book.authors}

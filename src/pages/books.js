@@ -1,19 +1,10 @@
 import React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import Layout from '../components/layout/layout'
 import TitleSection from '../components/title_section/title_section'
-import * as NpsStyles from '../styles/pages/nps.module.scss'
-
-const Card = props => {
-  return (
-    <Link to={props.link} className={NpsStyles.npsCard}>
-      <strong>{props.title}</strong>
-      <span>Authors : {props.authors ? props.authors : '-'}</span>
-      <span>Category : {props.category ? props.category : '-'}</span>
-    </Link>
-  )
-}
+import Card from '../components/card/card'
+import * as BookMainStyles from '../styles/pages/books.module.scss'
 
 const Books = () => {
   const data = useStaticQuery(graphql`
@@ -37,16 +28,19 @@ const Books = () => {
       <div className="container">
         <TitleSection title="Books" description="Data Sourced from json file" />
 
-        <div className={NpsStyles.npsCardWrapper}>
+        <div className={BookMainStyles.booksCardWrapper}>
           {cardData.map((item, index) => {
             return (
-              <Card
-                key={index}
-                link={`/books/${item.node.slug}`}
-                title={item.node.title}
-                authors={item.node.authors}
-                category={item.node.categories}
-              />
+              <Card key={index} link={`/books/${item.node.slug}`}>
+                <strong>{item.node.title}</strong>
+                <span>
+                  <b>Authors :</b> {item.node.authors ? item.node.authors : '-'}
+                </span>
+                <span>
+                  <b>Category :</b>{' '}
+                  {item.node.categories ? item.node.categories : '-'}
+                </span>
+              </Card>
             )
           })}
         </div>
