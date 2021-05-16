@@ -31,7 +31,7 @@ const Books = () => {
         <div className={BookMainStyles.booksCardWrapper}>
           {cardData.map((item, index) => {
             return (
-              <Card key={index} link={`/books/${item.node.slug}`}>
+              <Card key={index} link={`/books/${item.node.slug}/`}>
                 <strong>{item.node.title}</strong>
                 <span>
                   <b>Authors :</b> {item.node.authors ? item.node.authors : '-'}

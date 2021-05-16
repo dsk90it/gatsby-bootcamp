@@ -36,7 +36,7 @@ const Blog = () => {
           return (
             <ArticleCard
               key={index}
-              cardLink={`/blog/${item.node.fields.slug}`}
+              cardLink={`/blog/${item.node.fields.slug}/`}
               cardTitle={item.node.frontmatter.title}
               author={item.node.frontmatter.author}
               publishedDate={item.node.frontmatter.date}

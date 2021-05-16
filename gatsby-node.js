@@ -33,7 +33,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
 
   blogData.data.allMarkdownRemark.edges.forEach(edge => {
     createPage({
-      path: `blog/${edge.node.fields.slug}`,
+      path: `blog/${edge.node.fields.slug}/`,
       component: path.resolve(`src/templates/blog/blog_content.js`),
       context: {
         slug: edge.node.fields.slug,
@@ -62,7 +62,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
 
   booksData.data.allBooksJson.edges.forEach(book => {
     createPage({
-      path: `books/${book.node.slug}`,
+      path: `books/${book.node.slug}/`,
       component: path.resolve(`src/templates/book/book_content.js`),
       context: {
         slug: book.node.slug,
