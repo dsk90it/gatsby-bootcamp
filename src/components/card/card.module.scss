@@ -1,10 +1,4 @@
-@import '../../styles/global/variables.scss';
-
-@mixin truncate-text {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
+// @import '../../styles/global/variables.scss';
 
 .card {
   padding: 1.5rem;
@@ -16,12 +10,13 @@
   min-width: 0;
   user-select: none;
 
-  @media (min-width: $md) {
+  @include md {
     &:hover {
       box-shadow: 15px 15px 50px rgba($black, 0.2);
       transform: translateY(-4px);
     }
   }
+
   strong {
     display: block;
     width: 100%;

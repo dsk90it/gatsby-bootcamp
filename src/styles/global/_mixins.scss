@@ -1,0 +1,41 @@
+@mixin truncate-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// Media Queries
+@mixin xs {
+  @media (max-width: $xs) {
+    @content;
+  }
+}
+@mixin max-width($res) {
+  @media (max-width: $res) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin min-width($res) {
+  @media (min-width: $res) {
+    @content;
+  }
+}
