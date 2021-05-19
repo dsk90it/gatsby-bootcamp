@@ -14,7 +14,12 @@ module.exports = {
   },
 
   plugins: [
-    'gatsby-plugin-sass',
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        additionalData: `@import "${__dirname}/src/styles/global";`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
