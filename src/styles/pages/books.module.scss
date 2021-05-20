@@ -1,12 +1,10 @@
-@import '../global/variables.scss';
-
 .booksCardWrapper {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
   padding-bottom: 2rem;
 
-  @media (min-width: 560px) {
+  @include min-width(560px) {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }
